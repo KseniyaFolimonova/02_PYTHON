@@ -221,4 +221,30 @@
 
 # print(' '.join(result))
     
+# arr = [2, 4, 10, 4, 2]
+# res = []
+# count = 0
 
+
+# #while count < len(arr) -1:
+    
+# for i in range(1, len(arr) -1):
+#     current_sum = arr[i] + arr[i-1] + arr[i+1]
+#     res.append(current_sum)
+
+# max_cell = res[0]
+
+# for j in range(1, len(res)):    
+#     if res[j] > max_cell:
+#         max_cell = res[j]
+# count +=1
+# print(res)
+# print(max_cell)
+
+arr = [2, 4, 10, 4, 2]
+midlle = len(arr) // 2
+left = arr[:midlle]
+right = arr[midlle:]
+print(arr[midlle])
+print(left)
+print(right)
