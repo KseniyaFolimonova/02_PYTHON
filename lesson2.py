@@ -225,7 +225,6 @@
 # res = []
 # count = 0
 
-
 # #while count < len(arr) -1:
     
 # for i in range(1, len(arr) -1):
@@ -241,10 +240,34 @@
 # print(res)
 # print(max_cell)
 
-arr = [2, 4, 10, 4, 2]
-midlle = len(arr) // 2
-left = arr[:midlle]
-right = arr[midlle:]
-print(arr[midlle])
-print(left)
-print(right)
+# arr = [2, 4, 10, 4, 2]
+# midlle = len(arr) // 2
+# left = arr[:midlle]
+# right = arr[midlle:]
+# print(arr[midlle])
+# print(left)
+# print(right)
+
+list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+min_number = 0
+max_number = 10
+# list2 = []
+for i in range(len(list_1)):
+    if min_number <= list_1[i] <= max_number:
+        print(i)
+
+# if len(list2) > 1:
+#     j = 1
+#     while j < len(list2):
+#         if list2[j-1] > list2[j]:
+#             list2[j-1], list2[j] = list2[j], list2[j-1]
+#             if j > 1:
+#                 j -= 1
+#         else:
+#                 j += 1
+# Сортировка list2 в порядке убывания
+# list2.sort(reverse=True)
+# Сортировка list2 в порядке возрастания
+# list2.sort(True)
+
+# print(*list2) 

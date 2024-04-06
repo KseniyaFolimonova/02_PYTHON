@@ -192,24 +192,122 @@
 
 # Функция не должна ничего выводить, только возвращать значение.
 
-def f(a,b):
+# def f(a,b):
 
-    res = a ** b
-    if b == 0:
-        return 1
-    elif b < 0:
-        return 1 / (a * f(a, -b - 1)) # Обрабатываем отрицательные степени
-    else:
-        return a * f(a, b -1)
+#     if b == 0:
+#         return 1
+#     elif b < 0:
+#         return 1 / (a * f(a, -b - 1)) # Обрабатываем отрицательные степени
+#     else:
+#         return a * f(a, b -1)
+# # мы используем умножение для постепенного умножения 
+# # числа a на себя b раз (для положительной степени)
+# # или на обратное значение f(a, -b-1) (для отрицательной степени).
 
-a = int(input())
-b = int(input())
-result = f(a,b)
-print(result)
+# # f(3, 4) вычисляется как 3 * f(3, 3).
+# # f(3, 3) вычисляется как 3 * f(3, 2).
+# # f(3, 2) вычисляется как 3 * f(3, 1).
+# # f(3, 1) вычисляется как 3 * f(3, 0).
+# # f(3, 0) возвращает 1 (по определению базового случая).
+# # Теперь подставляем значения обратно: f(3, 1) становится 3 * 1 = 3.
+# # f(3, 2) становится 3 * 3 = 9.
+# # f(3, 3) становится 3 * 9 = 27.
+# # И, наконец, f(3, 4) становится 3 * 27 = 81.
 
-#f'{res} = {a ** b}\n'
-#f'{res} = {a ** b}\n' используется для форматирования строки.
-# Здесь \n - это специальный символ, который обозначает перевод
-# строки. Он добавляет новую строку после каждой строки вывода,
-# что делает вывод более читаемым, разделяя каждое уравнение на новой строке.
+# a = int(input())
+# b = int(input())
+# result = f(a,b)
+# print(result)
 
+# #f'{res} = {a ** b}\n'
+# #f'{res} = {a ** b}\n' используется для форматирования строки.
+# # Здесь \n - это специальный символ, который обозначает перевод
+# # строки. Он добавляет новую строку после каждой строки вывода,
+# # что делает вывод более читаемым, разделяя каждое уравнение на новой строке.
+
+# def sum(a,b):
+
+#     if b == 0:
+#         return a
+#     elif b > 0:
+#         return sum(a + 1, b - 1) # Обрабатываем отрицательного значения
+#     else:
+#         return sum (a - 1, b + 1)
+    
+# a = int(input())
+# b = int(input())
+
+# print(sum(a,b))
+
+# def N(a1, d, n):
+#     if n == 0:
+#         return a1
+#     return  a1 + N(a1 + d, d, n-1)
+
+
+# a1 = 2
+# d = 3
+# n = 4
+# print(N(a1, d, n))
+
+# def N(a1, d, n):
+#     if n == 1:
+#         return [a1]
+#     prev_terms = N(a1, d, n - 1)
+#     prev_term = prev_terms[-1]
+#     next_term = prev_term + d
+#     return prev_terms + [next_term]
+
+# a1 = 2
+# d = 3
+# n = 4
+
+# progression = N(a1, d, n)
+# for term in progression:
+#     print(term)
+
+# def arithmetic_progression(a1, d, n):
+#     progression = [a1]  # Создаем список и добавляем в него первый элемент прогрессии a1
+#     current_term = a1  # Инициализируем текущий элемент прогрессии значением первого элемента a1
+
+#     # Вычисляем следующие элементы прогрессии и добавляем их в список, пока не достигнем n элементов
+#     for _ in range(1, n):
+#         current_term += d  # Вычисляем следующий элемент путем добавления разности d к текущему элементу
+        
+#         progression.append(current_term)  # Добавляем следующий элемент в список прогрессии
+
+#     return progression
+
+# def PrintResult(result):
+#     for term in result:
+#         print(term)
+
+# a1 = -1
+# d = -5
+# n = 2
+
+# result = arithmetic_progression(a1, d, n)
+# PrintResult(result)
+
+# def EvenNumbers(*args):
+#     EvenItems = []
+#     for i in args:
+#         if i % 2 == 0:
+#             EvenItems.append((i, i*i))
+#     return EvenItems
+
+# result = EvenNumbers(1,4,6,8,3,5,6)
+# print(result)
+
+def select(f, col):
+    return [f(i) for i in col]
+def where(f, col):
+    return[i for i in col if f(i)]
+
+data = [1,4,6,8,3,5,6]
+res = select(int, data)
+print(res)
+res = where(lambda i: i % 2 == 0, res)
+print(res)
+res = list(select(lambda i: (i, i*i), res))
+print(res)
