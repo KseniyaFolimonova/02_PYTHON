@@ -248,13 +248,13 @@
 # print(left)
 # print(right)
 
-list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
-min_number = 0
-max_number = 10
-# list2 = []
-for i in range(len(list_1)):
-    if min_number <= list_1[i] <= max_number:
-        print(i)
+# list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# min_number = 0
+# max_number = 10
+# # list2 = []
+# for i in range(len(list_1)):
+#     if min_number <= list_1[i] <= max_number:
+#         print(i)
 
 # if len(list2) > 1:
 #     j = 1
@@ -271,3 +271,27 @@ for i in range(len(list_1)):
 # list2.sort(True)
 
 # print(*list2) 
+
+
+def Rithm(stroka):
+    stroka_list = stroka.split(' ')
+    nabor = ['a', 'e', 'y', 'u', 'i', 'o', 'й', 'у', 'е', 'ы', 'а', 'о', 'я', 'и', 'ю']
+    if len(stroka_list) <=1:
+            print('Количество фраз должно быть больше одной!')
+            return
+    
+    first_word_vowels = sum(1 for char in stroka_list[0] if char in nabor)
+
+    for word in stroka_list[1:]:
+        word_vowels = sum(1 for char in word if char in nabor)
+        if word_vowels != first_word_vowels:
+            print('Пам парам')
+            return
+    print('Парам пам-пам')
+    
+Rithm(stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам')
+
+
+# data = [1,4,6,8,3,5,6]
+# res = list(filter(lambda x: x % 2 != 0, data))
+# print(res)
