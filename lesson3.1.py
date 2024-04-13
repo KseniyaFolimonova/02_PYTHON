@@ -149,19 +149,19 @@
 #     print('different')
 
     
-def print_operation_table(operation, num_rows = 9, num_columns = 9):
+# def print_operation_table(operation, num_rows = 9, num_columns = 9):
         
-    if num_rows <= 2 or num_columns <= 2:
-        print("ОШИБКА! Размерности таблицы должны быть больше 2!")
-        return  
+#     if num_rows <= 2:
+#         print("ОШИБКА! Размерности таблицы должны быть больше 2!")
+#         return  
     
-    for row in range(1, num_rows+1):
-        list1 = []
-        for col in range(1, num_columns+1):
-            list1.append(operation(row,col)) #print(f"{operation(row, col):<2}", end=" ")
-        print(*list1)
+#     for row in range(1, num_rows+1):
+#         list1 = []
+#         for col in range(1, num_columns+1):
+#             list1.append(operation(row,col)) #print(f"{operation(row, col):<2}", end=" ")
+#         print(*list1)
 
-print_operation_table(lambda x, y: x *y, 3,3)
+# print_operation_table(lambda x, y: x *y, 3,3)
 
 # def print_operation_table(operation, num_rows = 9, num_columns = 9): 
 #     if num_rows < 2: 
@@ -174,3 +174,5 @@ print_operation_table(lambda x, y: x *y, 3,3)
 #             print(*lst) 
   
 # print_operation_table(lambda x, y: x * y, 3, 3)
+
+

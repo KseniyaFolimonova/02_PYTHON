@@ -269,11 +269,9 @@
 # def arithmetic_progression(a1, d, n):
 #     progression = [a1]  # Создаем список и добавляем в него первый элемент прогрессии a1
 #     current_term = a1  # Инициализируем текущий элемент прогрессии значением первого элемента a1
-
-#     # Вычисляем следующие элементы прогрессии и добавляем их в список, пока не достигнем n элементов
-#     for _ in range(1, n):
-#         current_term += d  # Вычисляем следующий элемент путем добавления разности d к текущему элементу
-        
+#     
+#     for _ in range(1, n): # Вычисляем следующие элементы прогрессии и добавляем их в список, пока не достигнем n элементов
+#         current_term += d  # Вычисляем следующий элемент путем добавления разности d к текущему элементу     
 #         progression.append(current_term)  # Добавляем следующий элемент в список прогрессии
 
 #     return progression
@@ -299,15 +297,3 @@
 # result = EvenNumbers(1,4,6,8,3,5,6)
 # print(result)
 
-def select(f, col):
-    return [f(i) for i in col]
-def where(f, col):
-    return[i for i in col if f(i)]
-
-data = [1,4,6,8,3,5,6]
-res = select(int, data)
-print(res)
-res = where(lambda i: i % 2 == 0, res)
-print(res)
-res = list(select(lambda i: (i, i*i), res))
-print(res)
