@@ -1,4 +1,5 @@
 
+
 def input_surname():
     return input('Введите фамилию: ').title()       # начинает с загланой буквы любое введенное слово
 
@@ -14,6 +15,8 @@ def input_phone():
 def input_address():
     return input('Введите город: ').title()
 
+#from create_list import input_surname, input_name, input_patronymic, input_phone, input_address
+
 def create_contact():
     surname = input_surname()
     name = input_name()
@@ -22,18 +25,23 @@ def create_contact():
     address = input_address()
     return f'{surname} {name} {patronymic} {phone}\n{address}\n\n'
 
+#from create_contact import create_contact
+
 def add_contact():
     contact = create_contact()
     with open('phone_book.txt', 'a', encoding='utf-8') as file:
         file.write(contact)
-        file.flush()                                             #используется для принудительного сброса буферизированных данных в файл. Рекомендации жпт
+        #file.flush()                                             #используется для принудительного сброса буферизированных данных в файл. Рекомендации жпт
 
 def print_contacts():
     with open('phone_book.txt', 'r', encoding='utf-8') as file:
         contacts_all = file.read()
+        #print(contacts_all)
     
     contacts_all_list = contacts_all.rstrip().split('\n\n')
-    for n, cont in enumerate(contacts_all_list, 1):
+    print()
+
+    for n,cont in enumerate(contacts_all_list, 1):
         
         print(n, cont)
 
@@ -60,13 +68,13 @@ def search_contact():
         contacts_search = file.read()
     
     contacts_search_list = contacts_search.rstrip().split('\n\n')  # rstrip() - убрать справа пустоты ''
-    print()
-
+    
     for contact_str in contacts_search_list:
         contacts_details = contact_str.replace(':', '').split()
         if search in contacts_details[i_var]:
             print(contact_str)
 
+#from function_phone_book import add_contact, print_contacts, search_contact
 
 def interface():
     with open('phone_book.txt', 'a', encoding='utf-8'):
@@ -83,18 +91,18 @@ def interface():
             )
         print()
 
-        var = input('Выберите вариант действия: ')
+        var = input('Выберите вариант действия: \n')
 
         while var not in ('1','2','3','4'):
             print('Некорректный ввод')
-            var = input('Выберите вариант действия: ')
-        print()
-
+            var = input('Выберите вариант действия: \n')
+        
         match var:
             case '1':
                 add_contact()
             case '2':
                 print_contacts()
+                
             case '3':
                 search_contact()
             case '4':

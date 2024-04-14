@@ -17,16 +17,16 @@ def input_data():
         var = int(input('Выберите ариант: '))
 
     if var == 1:
-        with open('data_first_var.csv', 'a', encoding='utf-8') as f:
-            f.write(f'{name}\n{surname}\n{phone}\n{address}\n\n')
+        with open('data_first_var.csv', 'a', encoding='utf-8') as file:
+            file.write(f'{name}\n{surname}\n{phone}\n{address}\n\n')
     elif var == 2:
         with open('data_second_var.csv', 'a', encoding='utf-8') as f:
             f.write(f'{name};{surname};{phone};{address}\n\n')
 
 def print_data():
     print('Данные из первого файла: \n')
-    with open('data_first_var.csv', 'r', encoding='utf-8') as f:
-        data_first = f.readlines()
+    with open('data_first_var.csv', 'r', encoding='utf-8') as file:
+        data_first = file.readlines()
         data_first_list = []
         j = 0
         for i in range(len(data_first)):
@@ -36,9 +36,16 @@ def print_data():
         print(''.join(data_first_list))
 
     print('Данные из второго файла: \n')
-    with open('data_second_var.csv', 'r', encoding='utf-8') as f:
+    with open('data_second_var.csv', 'r', encoding='utf-8') as file:
         data_second = f.readlines()
         print(*data_second)
 
+# if var == 1:
+#         with open('seminar12files/data_first_variant.csv', 'a', encoding='utf8') as f:
+#             f.write(f"{name}\n{surname}\n{phone}\n{adress}\n\n") 
+#     elif var == 2:
+#         with open('seminar12files/data_second_variant.csv', 'a', encoding='utf8') as f:
+#             f.write(f"{name};{surname};{phone};{adress}\n") 
+# Здравствуйте, я например эти файлы в каталоге seminar12files создавал,
+# следовательно путь к этим файлам будет 'seminar12files/data_first_variant.csv' или 'seminar12files/data_second_variant.csv'.
 
-print_data()

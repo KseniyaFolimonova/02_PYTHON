@@ -281,6 +281,10 @@ def Rithm(stroka):
             return
     
     first_word_vowels = sum(1 for char in stroka_list[0] if char in nabor)
+#     first_word_vowels = 0
+#     for char in stroka_list[0]:
+#         if char in nabor:
+#             first_word_vowels += 1
 
     for word in stroka_list[1:]:
         word_vowels = sum(1 for char in word if char in nabor)
@@ -288,8 +292,9 @@ def Rithm(stroka):
             print('Пам парам')
             return
     print('Парам пам-пам')
-    
-Rithm(stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам')
+
+stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+Rithm(stroka)
 
 
 # data = [1,4,6,8,3,5,6]
